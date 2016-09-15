@@ -3,6 +3,12 @@ package org.kolokolov.interview;
 import java.util.Map;
 import java.util.TreeMap;
 
+/*
+* The task is to create method that takes a string
+* and counts unique characters in it.
+* So if input string is "aaabcaaabc" output should 
+* be "6a2b2c"
+*/
 public class Task1 {
     
     public static String countLetters(String str) {
@@ -17,9 +23,5 @@ public class Task1 {
         StringBuilder result = new StringBuilder();
         chars.entrySet().stream().forEach(entry -> result.append(entry.getValue()).append(entry.getKey()));
         return result.toString();
-    }
-    
-    public static void main(String[] args) {
-        System.out.println(countLetters("zzkkqqqaaabcaaabc"));
     }
 }
