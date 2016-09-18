@@ -15,7 +15,6 @@ import org.kolokolov.logging.Messenger;
 public class MessengerTest {
     
     private static String resourceFileName = "resources/Messages";
-    private static String loggerFileName = "/resources/test_logging.properties";
    
     private Messenger messenger;
     private String expectegMessage;
@@ -28,19 +27,19 @@ public class MessengerTest {
     @Parameters
     public static Collection<Object[]> parameters() {
         return Arrays.asList(new Object[][] {
-            {new Messenger(resourceFileName, loggerFileName, Locale.US, 0), "Good night!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.US, 8), "Good morning!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.US, 12), "Good afternoon!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.US, 19), "Good evening!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.forLanguageTag("ru"), 0), "Спокойной ночи!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.forLanguageTag("ru"), 7), "Доброе утро!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.forLanguageTag("ru"), 11), "Добрый день!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.forLanguageTag("ru"), 20), "Добрый вечер!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.GERMAN, 0), "Good night!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.ITALY, 8), "Good morning!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.FRANCE, 12), "Good afternoon!"},
-            {new Messenger(resourceFileName, loggerFileName, Locale.CHINA, 19), "Good evening!"},
-            {new Messenger("resources/WrongFile", loggerFileName, Locale.US, 0), "Unable to get message!"}
+            {new Messenger(resourceFileName, Locale.US, 0), "Good night!"},
+            {new Messenger(resourceFileName, Locale.US, 8), "Good morning!"},
+            {new Messenger(resourceFileName, Locale.US, 12), "Good afternoon!"},
+            {new Messenger(resourceFileName, Locale.US, 19), "Good evening!"},
+            {new Messenger(resourceFileName, Locale.forLanguageTag("ru"), 0), "Спокойной ночи!"},
+            {new Messenger(resourceFileName, Locale.forLanguageTag("ru"), 7), "Доброе утро!"},
+            {new Messenger(resourceFileName, Locale.forLanguageTag("ru"), 11), "Добрый день!"},
+            {new Messenger(resourceFileName, Locale.forLanguageTag("ru"), 20), "Добрый вечер!"},
+            {new Messenger(resourceFileName, Locale.GERMAN, 0), "Good night!"},
+            {new Messenger(resourceFileName, Locale.ITALY, 8), "Good morning!"},
+            {new Messenger(resourceFileName, Locale.FRANCE, 12), "Good afternoon!"},
+            {new Messenger(resourceFileName, Locale.CHINA, 19), "Good evening!"},
+            {new Messenger("resources/WrongFile", Locale.US, 0), "Unable to get message!"}
         });
     }
     
