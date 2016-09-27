@@ -4,16 +4,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class TestTask {
     
     public static List<Integer> createRandomList(int size) {
-        Random rnd = new Random();
-        List<Integer> list = Stream.generate(() -> rnd.nextInt(100)).limit(size / 2).collect(Collectors.toList());
+        List<Integer> list = new Random().ints(50, 150).limit(size / 2).boxed().collect(Collectors.toList());
         list.addAll(list);
-        Collections.shuffle(list);
         list.remove(list.size() - 1);
+        Collections.shuffle(list);
         return list;
     }
     
