@@ -5,3 +5,4 @@ bin/
 testfield*
 logs/
 test/
+out/
