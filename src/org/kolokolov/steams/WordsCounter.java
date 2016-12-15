@@ -3,6 +3,7 @@ package org.kolokolov.steams;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -34,7 +35,7 @@ public class WordsCounter {
     }
 
     public void printMostFriquentWords(Map<String, Integer> words, int number) {
-        words.entrySet().stream().sorted((entry1, entry2) -> (entry2.getValue().compareTo(entry1.getValue())))
+        words.entrySet().stream().sorted(Map.Entry.<String,Integer>comparingByValue().reversed())
                 .limit(number).forEach(System.out::println);
     }
 }
