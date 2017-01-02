@@ -33,6 +33,9 @@ public class ArraysTest {
         System.out.println(stop3 - start3);
         
         
-        
+        Object[] arr = new  String[5];
+        arr[0] = "string";
+        System.out.println(arr[0]);
+        // arr[1] = 1; // Causes the ArrayStoreException
     }
 }
