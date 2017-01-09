@@ -1,12 +1,12 @@
 package org.kolokolov.collection;
 
 public class MyLinkedList<E> {
-    private Node<E> first;
-    private Node<E> last;
+    private Node first;
+    private Node last;
     private int size;
     
     public boolean add(E element) {
-        Node<E> newNode = new Node<>(last, null, element);
+        Node newNode = new Node(last, null, element);
         if (last != null) {
             last.next = newNode;
         }
@@ -23,8 +23,8 @@ public class MyLinkedList<E> {
         if (n == 0) {
             addFirst(element);
         } else {
-            Node<E> nNode = getNode(n);
-            Node<E> newNode = new Node<>(nNode.prev, nNode, element);
+            Node nNode = getNode(n);
+            Node newNode = new Node(nNode.prev, nNode, element);
             newNode.prev.next = newNode;
             nNode.prev = newNode;
             size++;
@@ -33,7 +33,7 @@ public class MyLinkedList<E> {
     }
     
     public boolean addFirst(E element) {
-        Node<E> newNode = new Node<>(null, first, element);
+        Node newNode = new Node(null, first, element);
         first.prev = newNode;
         first = newNode;
         size++;
@@ -45,8 +45,8 @@ public class MyLinkedList<E> {
         return getNode(n).value;
     }
     
-    private Node<E> getNode(int n) {
-        Node<E> node = null;
+    private Node getNode(int n) {
+        Node node = null;
         if (n <= size / 2) {
             node = first;
             while (n > 0) {
@@ -72,7 +72,7 @@ public class MyLinkedList<E> {
     public String toString() {
         StringBuilder result = new StringBuilder("[");
         if (size != 0) {
-            Node<E> node = first;
+            Node node = first;
             result.append(node.value);
             do {
                 if (node != last) {
@@ -90,12 +90,12 @@ public class MyLinkedList<E> {
     }
     
     
-    private static class Node<E> {
-        private Node<E> prev;
-        private Node<E> next;
+    private class Node {
+        private Node prev;
+        private Node next;
         private E value;
         
-        private Node(Node<E> prev, Node<E> next, E value) {
+        private Node(Node prev, Node next, E value) {
             this.prev = prev;
             this.next = next;
             this.value = value;
